@@ -23,13 +23,15 @@ app.use(cors({
   credentials: true, origin: [
     "http://tasks.com:3000",
     'https://tasks-manager-web-app.herokuapp.com',
-    'https://eazytasks.herokuapp.com'
+    'https://eazytasks.herokuapp.com',
+    'https://eazytasks.manojkumars.in'
   ]
 }));
 
 const validateToken = async (req: express.Request, res: express.Response, next: () => void) => {
   try {
-    const authToken = req.cookies.authToken;
+    const headers = req.headers;
+    const authToken = headers.authtoken.toString();
     const userId = await verifyToken(authToken);
     res.locals.userId = userId;
     next();

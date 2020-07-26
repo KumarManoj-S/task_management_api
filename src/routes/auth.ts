@@ -8,19 +8,12 @@ authRouter.get('/token', async (req, res) => {
     try {
         const result = await getToken(String(req.query.code))
         const { id_token, userId, name, exp } = result;
-        const cookieConfig = { domain: config.COOKIE_DOMAIN, expires: new Date(exp * 1000) }
         res.status(201)
-            .cookie('authToken', id_token, {
-                httpOnly: true,
-                ...cookieConfig
-
-            })
-            .cookie('userId', userId, cookieConfig)
-            .cookie('userName', name, cookieConfig)
             .send({
                 authToken: id_token,
-                userId: userId,
-                userName: name
+                userId,
+                userName: name,
+                expires: exp
             })
     } catch (err) {
         res.status(401).send("Login failed");
