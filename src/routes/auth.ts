@@ -17,7 +17,11 @@ authRouter.get('/token', async (req, res) => {
             })
             .cookie('userId', userId, cookieConfig)
             .cookie('userName', name, cookieConfig)
-            .send("Login Succeeded")
+            .send({
+                authToken: id_token,
+                userId: userId,
+                userName: name
+            })
     } catch (err) {
         res.status(401).send("Login failed");
     }
