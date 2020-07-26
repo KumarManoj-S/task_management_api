@@ -18,5 +18,6 @@ export default {
     ...config,
     GOOGLE_CLIENT_ID: '843494376459-d94jausfvjda97gd8k02it53r5ek0qo2.apps.googleusercontent.com',
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
-    COOKIE_SECRET: process.env.COOKIE_SECRET
+    COOKIE_SECRET: process.env.COOKIE_SECRET,
+    GOOGLE_REDIRECT_URI: process.env.GOOGLE_REDIRECT_URI
 };
