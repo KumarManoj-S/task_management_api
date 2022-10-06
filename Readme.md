@@ -1,6 +1,6 @@
 # Task Management Application API
 
-## Steps to Start the Server:
+## Steps to Start the Server
 
 1. clone the repo and run npm i.
 2. create a .env file at the root directory and provide default environment variables:
