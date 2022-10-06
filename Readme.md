@@ -7,3 +7,4 @@
    - NODE_ENV = development or production.
    - SERVER_PORT = Any free port.
 3. run the server in dev mode using the command `npm run dev`.
+
